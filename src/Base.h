@@ -36,9 +36,10 @@ namespace PopLib
 		~AppBase();
 		void Start();
 		void Update();
+		void GetVideoMode(sf::VideoMode TheMode);
 		
 		
 		
 	};
 
-} // namespace PopLib
+}
