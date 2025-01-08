@@ -17,7 +17,7 @@ namespace PopLib
 
 	class sf::Image;
 	class sf::Font; //No more image font.  It will be based here instead.  Will be wrapped with SFML later...
-	class PopWidget;//widgets will now be used upon a standard 60fps scale but will probably not use legacy code..
+	class Widget;//widgets will now be used upon a standard 60fps scale but will probably not use legacy code..
 	class Graphics;
 	
 	class AppBase
