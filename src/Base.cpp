@@ -6,53 +6,42 @@ namespace PopLib
 	AppBase::AppBase()
 	{
 	//default to 0 before doing anything else.
-	mTitle = nullptr;
-	mRegKey = nullptr;
+	mTitle = "";
+	mRegKey = "";
 	mWindowWidth = 0;
 	mWindowHeight = 0;
-	
 
 	}
 
 	AppBase::~AppBase()
 	{
+	
 
 
 	}
-	int AppBase::MainWindow(int pWidth, int pHeight)
+	void AppBase::GetVideoMode(sf::VideoMode TheMode)
 	{
-		mWindowWidth = pWidth;
-		mWindowHeight = pHeight;
+		mWindowWidth = TheMode.width;
+		mWindowHeight = TheMode.height;
+		mVideoMode = TheMode;
 
-		sf::Event aPollingEvent;
-		sf::RenderWindow aWindowToSpawn;
-	
-
-		sf::Window aWindow;
-		//get basic stuff for the windows properties.
-		aWindow.getPosition(); aWindow.getSettings(); aWindow.getSize(); aWindow.setTitle(mTitle);
-		aWindow.setFramerateLimit(60); aWindow.setVisible(1);
-
-		aWindow.pollEvent(aPollingEvent);
-		
-	
-		while (aWindow.isOpen())
-
-			aPollingEvent.Closed;
-		aWindow.close();
-
-		return 0;
-
-
+	}
+	void AppBase::Start()
+	{
+		GetVideoMode(mVideoMode);
 	}
 	void AppBase::Update()
 	{
+		if (mVideoMode.isValid() == true)
+			
+			
+		mTheWindow.pollEvent(mThePollingEvent);
 
 
+		while (mTheWindow.isOpen())
 
-
-
+		mThePollingEvent.Closed;
+		mTheWindow.close();
 
 	}
-
 }
