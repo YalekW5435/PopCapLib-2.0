@@ -1,47 +1,58 @@
 #include "Base.h"
 
+using namespace sf;
+
 namespace PopLib
 {
 
-	AppBase::AppBase()
-	{
-	//default to 0 before doing anything else.
-	mTitle = "";
-	mRegKey = "";
-	mWindowWidth = 0;
-	mWindowHeight = 0;
+std::shared_ptr<AppBase> gAppBase;
 
-	}
-
-	AppBase::~AppBase()
-	{
-	
-
-
-	}
-	void AppBase::GetVideoMode(sf::VideoMode TheMode)
-	{
-		mWindowWidth = TheMode.width;
-		mWindowHeight = TheMode.height;
-		mVideoMode = TheMode;
-
-	}
-	void AppBase::Start()
-	{
-		GetVideoMode(mVideoMode);
-	}
-	void AppBase::Update()
-	{
-		if (mVideoMode.isValid() == true)
-			
-			
-		mTheWindow.pollEvent(mThePollingEvent);
-
-
-		while (mTheWindow.isOpen())
-
-		mThePollingEvent.Closed;
-		mTheWindow.close();
-
-	}
+AppBase::AppBase()
+{
+    mWindow = std::make_unique<RenderWindow>(VideoMode(800, 600), "PopLib");
+    gAppBase = std::shared_ptr<AppBase>(this);
 }
+
+void AppBase::Start()
+{
+    mMainView.reset(FloatRect(0.0f, 0.0f, 800.0f, 600.0f));
+    mWindow->setView(mMainView);
+
+    while (IsWindowOpen())
+        Update();
+}
+
+void AppBase::Stop()
+{
+}
+
+void AppBase::Update()
+{
+    PollEvent();
+
+    mWindow->clear();
+    //TODO: Draw shit here.
+    mWindow->display();
+}
+
+void AppBase::PollEvent()
+{
+    Event event;
+
+    while (mWindow->pollEvent(event))
+    {
+        switch (event.type)
+        {
+        case Event::EventType::Closed: mWindow->close(); break;
+
+        default: break;
+        }
+    }
+}
+
+bool AppBase::IsWindowOpen()
+{
+    return mWindow->isOpen();
+}
+
+} // namespace PopLib

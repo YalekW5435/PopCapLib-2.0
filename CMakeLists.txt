@@ -56,7 +56,6 @@ add_executable(${PROJECT_NAME})
 target_compile_options(${PROJECT_NAME} PRIVATE ${warn_flags})
 
 target_link_libraries(PopLib PRIVATE sfml-graphics)
-target_compile_features(PopLib PRIVATE cxx_std_17)
 
 if(WIN32)
     add_custom_command(
