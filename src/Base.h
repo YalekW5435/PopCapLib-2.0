@@ -13,32 +13,31 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 namespace PopLib
 {
-	//was that what you needed
-    // Not really. I need sf::RenderWindow.
 
-	class Image;
-	class Font; //No more image font.  It will be based here instead.  Will be wrapped with SFML later...
-	class Widget;//widgets will now be used upon a standard 60fps scale but will probably not use legacy code..
-	class Graphics;
+
+	class sf::Image;
+	class sf::Font; //No more image font.  It will be based here instead.  Will be wrapped with SFML later...
+	class PopWidget;//widgets will now be used upon a standard 60fps scale but will probably not use legacy code..
+	class PopGraphics;
 	
 	class AppBase
 	{	
 	public:
-
-		
+		sf::Event mThePollingEvent;
+		sf::Window mTheWindow;
 		int mWindowWidth;//800??
 		int mWindowHeight;//600??
 		std::string mTitle;
 		std::string mRegKey;
-	
+		sf::VideoMode mVideoMode;
 
 
 		AppBase();
 		~AppBase();
-		
+		void Start();
 		void Update();
 		
-		int MainWindow(int pPidth, int pHeight);
+		
 		
 	};
 
