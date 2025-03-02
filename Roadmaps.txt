@@ -1,23 +1,22 @@
 This file is a checklist of what we will be adding in the future.
 **= is checked off, while x is future features.**
 
-*Stuff already made:*
+**Stuff already made:**
 = an example and familiar main.cpp
 = a graphics set of files that uses some of what SFML already uses to draw lines, shapes, etc.
 includes some vector functions.
 = The core of the library (in Base.h and cpp).
+= Add a resource/assets manager.
+= add image functionality.
 
-Stuff that is in the plans:
+**Stuff that is in the plans:**
 
-x introduce the widgets classes, and implement them on SFMLs drawing code...
 x expand upon graphics, adding 3D vectors, transformations, etc.
 x add animations from 2D strips, and other types of animations.
-x enable some sort of use with an ImageFont, but in the PopLib::Font, and in use with sf::Font classes instead.
 
 x Add a custom implementation of the Todd Foley Library, which was used in later versions of the older SexyApp 
 library not accessible to the public.
 
+x Add a customized variant of PopPak.  This was used in making maina.pak files seen in earlier games.
 x Add error handling functionality.
-x Add a resource/assets manager.
-x add file io handling.
-x add image functionality.
+
