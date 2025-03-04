@@ -6,49 +6,56 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-class ResourceManager
+namespace PopLib
 {
-private:
-	static std::map<std::string, sf::Texture*> mTextureMap;
-	static std::map<std::string, sf::SoundBuffer*> mSoundMap;
-	static std::map<std::string, sf::Font*> mFontMap;
 
-	const static std::string DEFAULT_INVALID_TEXTURE;
-	const static std::string DEFAULT_INVALID_SOUND;
-	const static std::string DEFAULT_INVALID_FONT;
+class ResourceManager
 
-	static std::string mInvalidTexture;
-	static std::string mInvalidSound;
-	static std::string mInvalidFont;
+    {
+    private:
+   
+    static std::map<std::string, sf::Texture *> mTextureMap;
+    static std::map<std::string, sf::SoundBuffer *> mSoundMap;
+    static std::map<std::string, sf::Font *> mFontMap;
 
-	const static std::vector<std::string> TEXTURE_EXTENSIONS;
-	const static std::vector<std::string> SOUND_EXTENSIONS;
-	const static std::vector<std::string> FONT_EXTENSIONS;
-	
-public:
-	static sf::Texture* GetTexture(const std::string filePath);
-	static int GetNumberOfTextures();
+    const static std::string DEFAULT_INVALID_TEXTURE;
+    const static std::string DEFAULT_INVALID_SOUND;
+    const static std::string DEFAULT_INVALID_FONT;
 
-	static void PreLoadTextures(const std::string folderPath, bool recurse = true);
-	static std::string GetInvalidTexturePath();
+    static std::string mInvalidTexture;
+    static std::string mInvalidSound;
+    static std::string mInvalidFont;
 
-	static void ClearTextures();
+    const static std::vector<std::string> TEXTURE_EXTENSIONS;
+    const static std::vector<std::string> SOUND_EXTENSIONS;
+    const static std::vector<std::string> FONT_EXTENSIONS;
 
-	static sf::SoundBuffer* GetSoundBuffer(const std::string filePath);
-	static int GetNumberOfSoundBuffers();
+    public:
+   
+    static sf::Texture *GetTexture(const std::string filePath);
+    static int GetNumberOfTextures();
 
+    static void PreLoadTextures(const std::string folderPath, bool recurse = true);
+    static std::string GetInvalidTexturePath();
 
-	static void PreLoadSoundBuffers(const std::string folderPath, bool recurse = true);
-	static std::string GetInvalidSoundPath();
+    static void ClearTextures();
 
-	static void ClearSoundBuffers();
+    static sf::SoundBuffer *GetSoundBuffer(const std::string filePath);
+    static int GetNumberOfSoundBuffers();
 
-	static sf::Font* GetFont(const std::string filePath);
-	static int GetNumberOfFonts();
+    static void PreLoadSoundBuffers(const std::string folderPath, bool recurse = true);
+    static std::string GetInvalidSoundPath();
 
-	static void PreLoadFonts(const std::string folderPath, bool recurse = true);
-	static std::string GetInvalidFontPath();
+    static void ClearSoundBuffers();
 
-	static void ClearFonts();
+    static sf::Font *GetFont(const std::string filePath);
+    static int GetNumberOfFonts();
 
-	static bool Contains(std::vector<std::string> vec, std::string str);
+    static void PreLoadFonts(const std::string folderPath, bool recurse = true);
+    static std::string GetInvalidFontPath();
+
+    static void ClearFonts();
+
+    static bool Contains(std::vector<std::string> vec, std::string str);
+    };
+}
