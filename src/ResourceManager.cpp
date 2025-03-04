@@ -1,6 +1,7 @@
 #include "ResourceManager.h"
 
 #include <filesystem>
+using namespace PopLib;
 
 const std::vector<std::string> ResourceManager::TEXTURE_EXTENSIONS = { ".png", ".jpg", ".jpeg" };
 const std::vector<std::string> ResourceManager::SOUND_EXTENSIONS = { ".wav", ".ogg"};
