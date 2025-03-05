@@ -47,6 +47,19 @@ jobs:
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
+      
+    - name: Install Essential Packages
+      run: |
+         if [ "$RUNNER_OS" == "Linux" ]; then  
+            sudo apt-get update -qq
+            sudo apt-get install -y gcc-multilib python3 curl zip unzip
+            sudo apt-get install -y --no-install-recommends libx11-dev libxcursor-dev libxrandr-dev libxinerama-dev libxi-dev libxext-dev libxfixes-dev libgl1-mesa-dev
+         else
+              echo "$RUNNER_OS not supported"
+              exit 1
+         fi
+      shell: bash
+  
     - name: Configure CMake
       run: >
         cmake -B ${{ steps.strings.outputs.build-output-dir }}
