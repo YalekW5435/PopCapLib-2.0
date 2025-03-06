@@ -26,6 +26,7 @@ You do not need to build your project as an executable is already provided for y
 If you want to change the name of the project, goto the main cmake listed at the root folder of this library.
 
 There will also be a file dedicated to future features that will be added per community requests, please look at "roadmaps.txt" for more details.
+!!! We are also looking for contributors who wish to add on to this project.  I will be approving these as we go along.  
 
 Happy Gaming!
 
