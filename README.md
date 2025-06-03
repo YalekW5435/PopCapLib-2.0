@@ -1,4 +1,5 @@
-This library will be renamed PopSFML in the near future.  Please refer to this repository instead if you wish to make games *traditionally* (as in, the way PopCap did), in this modernized version of the framework:
+An SFML version of PopCap's SexyAppBase.  Wraps its code into SFML based code to ease the development process.
+Code is unstable, and may take a while to complete.  
 
 https://github.com/teampopwork/PopWork
 
